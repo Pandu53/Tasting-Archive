@@ -1,7 +1,7 @@
 User Stories 
 ===
 
-1. User Story 
+1. User Story (initial)
 ---
 
 * Der feine Geist möchte sichi einen Whiskey für das nächste Tasting aussuchen und hat bereits eine Vorauswahl getroffen.
@@ -14,7 +14,7 @@ User Stories
 * Danach geht er wieder auf die Startseite
   
 
-2. User Story
+2. User Story (initial)
 ---
 
 * Der feine hat an das Tasting vor 2 jahren gedacht und würde gerne wissen welche Whiskeys alle bei diesem Tasting mit dabei waren
@@ -23,3 +23,5 @@ User Stories
 * In der Liste findet er das Tasting und ruft die Detailansicht des Tastings auf
 * Dort findet er alles Whiskey die Teilgenommen haben und die Ratings zu den Whiskeys
 * Danach geht er wieder auf die Startseite
+
+
