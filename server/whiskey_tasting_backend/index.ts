@@ -1,14 +1,16 @@
 var express = require("express");
-var app = express();
+const app = express();
+const dotenv = require('dotenv');
+dotenv.config();
 
 //Import Routes
-var whiskeyRoutes = require('./components/whiskeys.ts');
-var tastingRoutes = require('./components/tastings.ts');
+var whiskeyRoutes = require('./components/whiskeys/whiskeysRoutes.ts');
+var tastingRoutes = require('./components/tastings/tastingsRoutes.ts');
 
 app.use('/whiskeys', whiskeyRoutes);
 app.use('/tastings', tastingRoutes);
 
 
-app.listen(3000, () => {
-    console.log("Backend for Whiskey Tasing Project is running on port 3000");
+app.listen(process.env.SERVER_PORT, () => {
+    console.log("Backend for Whiskey Tasing Project is running on port " + process.env.SERVER_PORT );
 });
