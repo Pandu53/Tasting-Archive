@@ -20,3 +20,9 @@ Verwendete Software für den Protoypen: Balsamiq Mockups
 * Liste aller Whiskeys die an einem Tasting teilgenommen haben.
 * Ansihct eines Tastings mit der Übersicht welche Whiskeys an diesem Tasting teilgenommen haben, mit Rating und andern informationen
 * Immer wenn ein Whiskey angezeigt wird, wird dazu die Bewertung des Whiskeys angezeigt.
+
+
+3. API
+---
+
+Eine Dokumentation der API ist hier zu finden: [https://documenter.getpostman.com/view/12388081/TVzVivgc]

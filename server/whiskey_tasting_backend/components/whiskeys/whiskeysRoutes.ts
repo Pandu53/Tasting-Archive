@@ -9,7 +9,7 @@ router.get('/', controller.all_whiskeys);
 router.get('/id/:id', controller.whiskey_by_id);
 
 // returns list of whiskeys  
-router.get('/search/name/:searchPhrase', controller.whiskey_search);
+router.get('/search/:searchPhrase', controller.whiskey_search);
 
 
 module.exports =  router; 
