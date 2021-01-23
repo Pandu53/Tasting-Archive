@@ -40,7 +40,7 @@ export default {
   methods: {
     loadWhiskeyList: function () {
         this.loaded = false;
-      fetch("http://localhost:3000/whiskeys")
+      fetch(process.env.API_BASE_URL+'/whiskeys')
         .then((response) => response.json())
         .then((data) => {
           this.whiskeyList = data;
@@ -49,7 +49,7 @@ export default {
     },
     searchWhiskey: function() {
     this.loaded = false;
-    fetch("http://localhost:3000/whiskeys/search/" + this.searchPhrase)
+    fetch(process.env.API_BASE_URL+'/whiskeys/search/' + this.searchPhrase)
         .then((response) => response.json())
         .then((data) => {
           this.whiskeyList = data;
