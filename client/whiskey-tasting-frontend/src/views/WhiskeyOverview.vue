@@ -1,5 +1,5 @@
 <template>
-  <div class='container-md'>
+  <div class="container-md">
     <h1>DIESE WHISKEYS WAREN SCHON DABEI</h1>
     <div class="search-input">
       <div class="form-outline">
@@ -60,12 +60,9 @@ export default {
     },
     searchWhiskey: function () {
       this.loaded = false;
-      fetch(
-        'http://localhost:3000/whiskeys/search/' + this.searchPhrase,
-        {
-          "Content-Type": "application/json",
-        }
-      )
+      fetch("http://localhost:3000/whiskeys/search/" + this.searchPhrase, {
+        "Content-Type": "application/json",
+      })
         .then((response) => response.json())
         .then((data) => {
           this.whiskeyList = data;
@@ -77,9 +74,16 @@ export default {
 </script>
 
 <style  scoped>
-
 input {
-  background-color : rgba(14, 8, 2, 0.418);
+  background-color: rgba(14, 8, 2, 0.418);
 }
+
+.whiskey-list-container {
+  height: 70vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(14, 8, 2, 0.616) rgba(14, 8, 2, 0.397) ;
+}
+
 
 </style>

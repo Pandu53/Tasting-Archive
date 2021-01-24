@@ -7,7 +7,7 @@
           Das "Treffen voller Geister" wurde 2014 ins Leben gerufen. Seit her
           wird möglichst einmal im Jahr zu einem Tasting gerufen, bei dem jeder
           Geist ein Whiskey präsentiert und danach gemeinsam mit den anderen
-          geistern verkostet. Danach wird jede Präsentation und der geschmack
+          Geistern verkostet. Danach wird jede Präsentation und der Geschmack
           des Whiskeys bewertet. Der volle Geist mit der besten Bewertung erhält
           einen geheimen Preis.
         </p>
