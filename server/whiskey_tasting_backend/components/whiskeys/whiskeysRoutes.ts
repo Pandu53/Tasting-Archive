@@ -11,5 +11,8 @@ router.get('/id/:id', controller.whiskey_by_id);
 // returns list of whiskeys  
 router.get('/search/:searchPhrase', controller.whiskey_search);
 
+//returns all whiskeys related to an specific tasting
+router.get('/tasting/:tastingId',controller.whiskeys_by_tasting);
+
 
 module.exports =  router; 

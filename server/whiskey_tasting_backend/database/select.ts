@@ -2,36 +2,47 @@ var db = require('./connection.ts');
 
 //WHISKEY SELECTS
 
-exports.allWhiskeys = function (callback){
+exports.allWhiskeys = function (callback) {
     let query = 'SELECT * FROM whiskeys';
     let result = db.query(query, callback);
     return result;
 }
 
-exports.whiskeyById = function (id,callback){
+exports.whiskeyById = function (id, callback) {
     let query = 'SELECT * FROM whiskeys WHERE id=' + id;
     let result = db.query(query, callback);
     return result;
 }
 
-exports.whiskeySearchByName = function(searchPhrase, callback){
-    let query = 'SELECT * FROM whiskeys WHERE name LIKE "%'+ searchPhrase +'%"';
+exports.whiskeySearchByName = function (searchPhrase, callback) {
+    let query = 'SELECT * FROM whiskeys WHERE name LIKE "%' + searchPhrase + '%"';
     console.log('searching for : ' + searchPhrase);
-    let result = db.query(query,callback);
+    let result = db.query(query, callback);
+    return result;
+}
+
+exports.whiskeyByTastingId = function (tastingId, callback) {
+    let query = 'SELECT * FROM whiskeys WHERE TASTING_ID = ' + tastingId + ' ORDER BY total_rating';
+    console.log('requesting whiskeys for tasting with id: ' + tastingId);
+    let result = db.query(query, callback);
     return result;
 }
 
 
 //TASTING SELECTS 
 
-exports.allTastings = function(callback){
+exports.allTastings = function (callback) {
     let query = 'SELECT * FROM tasting';
-    let results = db.query(query,callback);
+    let results = db.query(query, callback);
     return results;
 }
 
-exports.tastingByDate = function(date,callback){
-    let query = 'SELECT id, DATE_FORMAT(date, "%a %d.%m.%Y") AS date FROM tasting ORDER BY ABS( DATEDIFF( date , "'+ date +'" ) ) LIMIT 1';
-    let result = db.query(query,callback);
-    return result;
+exports.tastingByDate = function (date, callback) {
+    let query = 'SELECT id, DATE_FORMAT(date, "%a %d.%m.%Y") AS date FROM tasting ORDER BY ABS( DATEDIFF( date , "' + date + '" ) ) LIMIT 1';
+    let result = db.query(query, callback);
+    if (result.length > 0) {
+        return result[0];
+    }
+    return {};
+
 }
