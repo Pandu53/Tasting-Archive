@@ -32,7 +32,7 @@ exports.whiskeyByTastingId = function (tastingId, callback) {
 //TASTING SELECTS 
 
 exports.allTastings = function (callback) {
-    let query = 'SELECT * FROM tasting';
+    let query = 'SELECT id, DATE_FORMAT(date, "%Y %m %d") AS date FROM tasting ORDER BY date desc';
     let results = db.query(query, callback);
     return results;
 }
