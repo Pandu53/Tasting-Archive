@@ -1,10 +1,29 @@
 <template>
-  <div class="home">
-    <div v-if='whiskeysLastTasting.length > 0' >
+  <div class="home container-md">
+    <div class="home-description">
+      <h1>TREFFEN VOLLER GEISTER</h1>
+      <div class="about-text">
+        <p>
+          Das "Treffen voller Geister" wurde 2014 ins Leben gerufen. Seit her
+          wird möglichst einmal im Jahr zu einem Tasting gerufen, bei dem jeder
+          Geist ein Whiskey präsentiert und danach gemeinsam mit den anderen
+          geistern verkostet. Danach wird jede Präsentation und der geschmack
+          des Whiskeys bewertet. Der volle Geist mit der besten Bewertung erhält
+          einen geheimen Preis.
+        </p>
+        <p>
+          Auf dieser Seite findet ihr eine Übersicht der bereits verkosteten
+          Whiskeys und falls dokumentiert die dazugehörigen Daten und
+          Bewertungen.
+        </p>
+      </div>
+    </div>
+    <h2>Sieger des letzten Tastings</h2>
+    <div v-if="whiskeysLastTasting.length > 0">
       <whiskeycard
         v-for="i in 3"
-        :key="whiskeysLastTasting[i].id"
-        :whiskey="whiskeysLastTasting[i]"
+        :key="whiskeysLastTasting[i - 1].id"
+        :whiskey="whiskeysLastTasting[i - 1]"
       />
     </div>
   </div>
@@ -75,3 +94,10 @@ export default {
   },
 };
 </script>
+
+
+<style scoped>
+ .about-text {
+   margin-bottom: 40px;
+ }
+</style>

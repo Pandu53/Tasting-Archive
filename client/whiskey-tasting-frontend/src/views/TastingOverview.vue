@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container-md">
     <h1>Vergangene Tastings</h1>
     <div class="search-input">
       <div class="list-count">{{ tastingList.length }} Tastings</div>

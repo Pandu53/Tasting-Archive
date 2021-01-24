@@ -1,31 +1,68 @@
 <template>
+<div class="main">
   <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/tastingList">Alle Tastings</router-link> |
     <router-link to="/whiskeylist">Alle Whiskeys</router-link>
   </div>
   <router-view />
+</div>
 </template>
 
 <style>
+
+@font-face {
+  font-family: 'Zierinitialien';
+  src: url('./assets/fonts/Zierinitialen1.ttf');
+}
+
+@font-face {
+  font-family: 'Gudea';
+  src: url('./assets/fonts/Gudea-Regular.ttf');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+  background-color:  rgb(14, 8, 2);
+  height: 100%;
+}
+
+body {
+    margin: 0px;
+    height: 100%;
+    background-image: url('./assets/body-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+h1 , h2 , h3 , h4 {
+  font-family: Zierinitialien;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  height: 100%;
+  font-family: Gudea, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: rgb(253, 239, 222);
+  background-image: linear-gradient( 90deg,  rgba(14, 8, 2, 0.75) 10%, rgba(19, 10, 1, 0.322)20%,rgba(19, 10, 1, 0.322)80%, rgba(14, 8, 2, 0.75)90%);
 }
 
 #nav {
   padding: 30px;
+  font-family: Zierinitialien;
 }
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #dd955a;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #d65933;
 }
 </style>

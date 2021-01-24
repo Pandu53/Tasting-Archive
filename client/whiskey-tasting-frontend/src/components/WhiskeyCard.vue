@@ -1,5 +1,5 @@
 <template>
-  <div class="whiske-card">
+  <div class="whiskey-card">
     <h3>{{whiskey.name}}</h3>
     <table width="100%">
       <tr>
@@ -51,6 +51,28 @@ export default {
 };
 </script>
 
-<style lang="">
-    
+<style >
+
+  .whiskey-card {
+    margin-top: 30px;
+    padding: 0 20px;
+    border-style: solid;
+    border-width: 2px 0;
+    border-color: rgba(255, 235, 205, 0.288);
+    background-color: rgba(15, 1, 4, 0.178);
+  }
+
+  h3 {
+    color:rgb(240, 159, 94)
+  }
+  
+  h4 {
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.411);
+  }
+
+  td h4 {
+  text-align: left;
+    }
+
+
 </style>

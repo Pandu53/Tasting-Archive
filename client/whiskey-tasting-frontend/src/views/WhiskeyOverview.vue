@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class='container-md'>
     <h1>DIESE WHISKEYS WAREN SCHON DABEI</h1>
     <div class="search-input">
       <div class="form-outline">
@@ -9,7 +9,7 @@
           class="form-control"
           @keyup.enter="searchWhiskey()"
         />
-        <label class="form-label" for="form1">Example label</label>
+        <label class="form-label" for="form1">Suchen</label>
       </div>
 
       <div class="list-count">{{ whiskeyList.length }} Whiskeys</div>
@@ -76,4 +76,10 @@ export default {
 };
 </script>
 
-<style lang="stylus" scoped></style>
+<style  scoped>
+
+input {
+  background-color : rgba(14, 8, 2, 0.418);
+}
+
+</style>
