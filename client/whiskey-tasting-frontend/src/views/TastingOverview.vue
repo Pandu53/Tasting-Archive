@@ -20,11 +20,11 @@ import tastingcard from "../components/TastingCard.vue";
 export default {
   name: "tasting_list",
   components: {
-    tastingcard
+    tastingcard 
   },
   data: function () {
     return {
-      loaded: false,
+      loaded : false,
       tastingList: [],
       searchDate: "",
     };
