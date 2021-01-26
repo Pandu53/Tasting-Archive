@@ -40,7 +40,7 @@ exports.allTastings = function (callback: Function ) : Array<Object> {
 
 exports.tastingByDate = function (date: string, callback: Function) : Object {
     let query: string = 'SELECT id, DATE_FORMAT(date, "%a %d.%m.%Y") AS date FROM tasting ORDER BY ABS( DATEDIFF( date , "' + date + '" ) ) LIMIT 1';
-    console.log('requesting a tasting tat is neares to the date: ' + date);
+    console.log('requesting a tasting that is the nearest to the date: ' + date);
     let result: Array<Object> = db.query(query, callback);
     if (result.length > 0) {
         return result[0];
