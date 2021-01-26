@@ -51,7 +51,7 @@ export default {
 };
 </script>
 
-<style >
+<style scoped>
 
   .whiskey-card {
     margin-top: 30px;
@@ -62,7 +62,13 @@ export default {
     background-color: rgba(15, 1, 4, 0.178);
   }
 
-  h3 {
+  h4 {
+  border-bottom: rgba(255, 235, 205, 0.178);
+  border-style: solid;
+  border-width: 0 0 1px;
+  }
+
+  h3 , h4 {
     color:rgb(240, 159, 94)
   }
   
