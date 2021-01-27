@@ -1,5 +1,6 @@
 <template>
 <div class="main">
+  <headerbar />
   <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/tastingList">Alle Tastings</router-link> |
@@ -8,6 +9,18 @@
   <router-view />
 </div>
 </template>
+
+<script>
+import headerbar from './components/HeaderBar.vue';
+
+export default {
+  name:'app',
+  components:{
+    headerbar,
+  },
+
+}
+</script>
 
 <style>
 
