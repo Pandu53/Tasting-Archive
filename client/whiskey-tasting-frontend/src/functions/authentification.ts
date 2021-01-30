@@ -5,16 +5,16 @@ const loginRoutine = credentials => new Promise ((resolve, reject) => {
         body: JSON.stringify(credentials)
     })
     .then(function(response){
-        const token:string = response.data.token;
+        const result = JSON.parse(response);
+        const token:string = result.data.token;
+        const id: number = result.data.userId;
         localStorage.setItem('user-token', token);
-        resolve(response);
+        localStorage.setItem('user-id', id.toString());
+        resolve(result);
     })
     .catch(function(error){
-        localStorage.removeItem('user-token')
+        localStorage.removeItem('user-token');
+        localStorage.removeItem('user-id');
         reject(error);
     })
-})
-
-const logoutRoutine = credentials => ((resolve, reject)=> {
-    
 })
