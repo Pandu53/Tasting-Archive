@@ -1,6 +1,9 @@
 var express = require("express");
 var router = express.Router();
 var controller = require('./whiskeyController.ts')
+var auth = require('../../authentification/authentification.ts')
+
+//-------------GET--------------------------
 
 //retunrs a list of all whiskeys
 router.get('/', controller.all_whiskeys);
@@ -15,5 +18,9 @@ router.get('/search/', controller.all_whiskeys);
 //returns all whiskeys related to an specific tasting
 router.get('/tasting/:tastingId',controller.whiskeys_by_tasting);
 
+//--------------POST-------------------------
+
+//saves a new Whiskey to the database
+router.post('/', auth.checkAuth , controller.save_whiskey);
 
 module.exports =  router; 
