@@ -16,6 +16,7 @@
 
 <script>
 import tastingcard from "../components/TastingCard.vue";
+import tastingAPI from "../functions/tastingApi.ts";
 
 export default {
   name: "tasting_list",
@@ -35,14 +36,7 @@ export default {
   methods: {
     loadTastingList: function () {
       this.loaded = false;
-      fetch("http://localhost:3000/tastings", {
-        "Content-Type": "application/json",
-      })
-        .then((response) => {
-          if (response.ok) {
-            return response.json();
-          }
-        })
+      tastingAPI.getAllTastings()
         .then((data) => {
           this.tastingList = data;
           console.log(data);
@@ -51,13 +45,7 @@ export default {
     },
     searchTasting: function () {
       this.loaded = false;
-      fetch(
-        'http://localhost:3000/tastings/date/' + this.searchDate,
-        {
-          "Content-Type": "application/json",
-        }
-      )
-        .then((response) => response.json())
+      tastingAPI.getTastingByDate(this.searchDate)
         .then((data) => {
           this.tastingList = data;
           this.loaded = true;

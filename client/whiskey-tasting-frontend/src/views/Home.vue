@@ -31,6 +31,8 @@
 
 <script>
 import whiskeycard from "../components/WhiskeyCard.vue";
+import tastingAPI from "../functions/tastingApi.ts";
+import whiskeyAPI from "../functions/whiskeyApi.ts";
 
 export default {
   name: "Home",
@@ -50,20 +52,10 @@ export default {
   methods: {
     loadWhiskeyLastTasting: function () {
       this.loaded = false;
-      fetch(
-        "http://localhost:3000/tastings/date/" + this.dateToday(Date.now()),
-        {
-          "Content-Type": "application/json",
-        }
-      )
-        .then((response) => {
-          if (response.ok) {
-            return response.json();
-          }
-        })
+      tastingAPI.getTastingByDate(this.dateToday(new Date()))
         .then((data) => {
           this.tasting = data[0];
-          this.getWhiskeysForTasting(data.id);
+          this.getWhiskeysForTasting(this.tasting.id);
         });
     },
     dateToday: function (date) {
@@ -78,14 +70,7 @@ export default {
       return [year, month, day].join("-");
     },
     getWhiskeysForTasting: function (tastingId) {
-      fetch("http://localhost:3000/whiskeys/tasting/" + this.tasting.id, {
-        "Content-Type": "application/json",
-      })
-        .then((response) => {
-          if (response.ok) {
-            return response.json();
-          }
-        })
+      whiskeyAPI.getWhiskeyByTastingId(tastingId)
         .then((data) => {
           this.whiskeysLastTasting = data;
           this.loaded = true;

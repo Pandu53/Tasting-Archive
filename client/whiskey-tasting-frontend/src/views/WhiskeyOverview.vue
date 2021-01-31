@@ -26,6 +26,7 @@
 
 <script>
 import whiskeycard from "../components/WhiskeyCard.vue";
+import whsikeyAPI from "../functions/whiskeyApi.ts"
 
 export default {
   name: "whiskey_list",
@@ -45,14 +46,7 @@ export default {
   methods: {
     loadWhiskeyList: function () {
       this.loaded = false;
-      fetch("http://localhost:3000/whiskeys", {
-        "Content-Type": "application/json",
-      })
-        .then((response) => {
-          if (response.ok) {
-            return response.json();
-          }
-        })
+        whsikeyAPI.getAllWhiskeys()
         .then((data) => {
           this.whiskeyList = data;
           this.loaded = true;
@@ -60,10 +54,7 @@ export default {
     },
     searchWhiskey: function () {
       this.loaded = false;
-      fetch("http://localhost:3000/whiskeys/search/" + this.searchPhrase, {
-        "Content-Type": "application/json",
-      })
-        .then((response) => response.json())
+      whsikeyAPI.searchWhiskeyByName(this.searchPhrase)
         .then((data) => {
           this.whiskeyList = data;
           this.loaded = true;
@@ -79,7 +70,7 @@ input {
 }
 
 .whiskey-list-container {
-  height: 70vh;
+  height: 60vh;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: rgba(14, 8, 2, 0.616) rgba(14, 8, 2, 0.397) ;

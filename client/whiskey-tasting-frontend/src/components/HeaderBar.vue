@@ -35,6 +35,8 @@
 
 <script>
 
+import loginAPI from "../functions/authentification.ts"
+
 export default {
   name: "header-bar",
   data: function () {
@@ -49,13 +51,7 @@ export default {
   methods: {
     login: function () {
       console.log("login :" + this.username + " " +this.password);
-      fetch("http://localhost:3000/login/", {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json'
-        },   
-        body: JSON.stringify({'user':this.username,'password':this.password}),
-      }).then(response => response.json())
+      loginAPI.loginRoutine({'user': this.username, 'password': this.password})
         .then(data => {
           this.token = data.token;
           this.userId = data.userId;
