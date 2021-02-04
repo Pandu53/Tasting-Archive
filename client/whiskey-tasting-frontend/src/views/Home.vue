@@ -19,7 +19,7 @@
       </div>
     </div>
     <h2>Sieger des letzten Tastings</h2>
-    <div v-if="whiskeysLastTasting.length > 0">
+    <div class="row justify-content-around" v-if="whiskeysLastTasting.length > 0" >
       <whiskeycard
         v-for="i in 3"
         :key="whiskeysLastTasting[i - 1].id"

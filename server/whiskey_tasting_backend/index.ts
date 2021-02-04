@@ -6,9 +6,12 @@ dotenv.config();
 //Import Routes
 var whiskeyRoutes = require('./components/whiskeys/whiskeysRoutes.ts');
 var tastingRoutes = require('./components/tastings/tastingsRoutes.ts');
+var loginRoutes = require('./components/login/loginRoutes.ts');
 
+app.use(express.json());
 app.use('/whiskeys', whiskeyRoutes);
 app.use('/tastings', tastingRoutes);
+app.use('/login', loginRoutes);
 
 
 app.listen(process.env.SERVER_PORT, () => {

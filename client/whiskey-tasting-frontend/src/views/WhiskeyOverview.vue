@@ -15,11 +15,13 @@
       <div class="list-count">{{ whiskeyList.length }} Whiskeys</div>
     </div>
     <div class="whiskey-list-container" v-if="whiskeyList.length > 0">
+      <div class="row justify-content-around">
       <whiskeycard
         v-for="whiskey in whiskeyList"
         :key="whiskey.id"
         :whiskey="whiskey"
       />
+      </div>
     </div>
   </div>
 </template>
@@ -72,6 +74,7 @@ input {
 .whiskey-list-container {
   height: 60vh;
   overflow-y: auto;
+  overflow-x: hidden;
   scrollbar-width: thin;
   scrollbar-color: rgba(14, 8, 2, 0.616) rgba(14, 8, 2, 0.397) ;
 }

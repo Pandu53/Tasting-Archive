@@ -1,1 +1,1 @@
-const WhiskeyModel = ()
+const WhiskeyModel = ();

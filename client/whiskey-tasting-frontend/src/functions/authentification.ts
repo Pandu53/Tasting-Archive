@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 export default {
-    loginRoutine(credentials){
+    loginRoutine(credentials: {user: string , password: string}){
         console.log(credentials);
         return axios.post("/login/", {
             data:{

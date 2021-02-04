@@ -23,9 +23,10 @@ exports.checkAuth = (req, res, next) => {
 
 exports.login = (req, res, next) => {
     try {
-        const userName: string = req.body.user;
-        const password: string = req.body.password + process.env.PEPPER;
+        const userName: string = req.body.body.user;
+        const password: string = req.body.body.password + process.env.PEPPER;
         const hashedPassword: string = sha256(password);
+        console.log(userName + "  " + password);
         select.isUserInDb(userName, hashedPassword, (error, results, fields) => {
 
             if (results.length > 0) {
