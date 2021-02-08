@@ -12,5 +12,6 @@ router.get('/id/:id', (req,res) => {
 
 //gibnt das tatsing von einem bestimmten Datum zurück ( dd-mm-yy )
 router.get('/date/:date', controller.tasting_by_date );
+router.get('/date/', controller.all_tastings );
 
 module.exports =  router; 
