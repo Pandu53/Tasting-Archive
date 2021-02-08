@@ -1,5 +1,6 @@
 var express = require("express");
 const app = express();
+const cors = require('cors');
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -9,6 +10,7 @@ var tastingRoutes = require('./components/tastings/tastingsRoutes.ts');
 var loginRoutes = require('./components/login/loginRoutes.ts');
 
 app.use(express.json());
+app.use(cors());
 app.use('/whiskeys', whiskeyRoutes);
 app.use('/tastings', tastingRoutes);
 app.use('/login', loginRoutes);
