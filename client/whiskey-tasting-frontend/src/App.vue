@@ -1,11 +1,6 @@
 <template>
 <div class="main">
   <headerbar />
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/tastingList">Alle Tastings</router-link> |
-    <router-link to="/whiskeylist">Alle Whiskeys</router-link>
-  </div>
   <router-view />
 </div>
 </template>
@@ -66,17 +61,5 @@ h1 , h2 , h3 , h4 {
   background-image: linear-gradient( 90deg,  rgba(14, 8, 2, 0.75) 10%, rgba(19, 10, 1, 0.322)20%,rgba(19, 10, 1, 0.322)80%, rgba(14, 8, 2, 0.75)90%);
 }
 
-#nav {
-  padding: 30px;
-  font-family: Zierinitialien;
-}
 
-#nav a {
-  font-weight: bold;
-  color: #dd955a;
-}
-
-#nav a.router-link-exact-active {
-  color: #d65933;
-}
 </style>

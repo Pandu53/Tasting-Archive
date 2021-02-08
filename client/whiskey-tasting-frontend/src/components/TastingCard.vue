@@ -51,6 +51,8 @@
 
 
 <script>
+import whsikeyAPI from "../functions/whiskeyApi.ts";
+
 export default {
   name: "tastingcard",
   props: ["tasting"],
@@ -66,17 +68,9 @@ export default {
   methods: {
     getWhiskeysForTasting: function () {
       this.loaded = false;
-      fetch("http://localhost:3000/whiskeys/tasting/" + this.tasting.id, {
-        "Content-Type": "application/json",
-      })
-        .then((response) => {
-          if (response.ok) {
-            return response.json();
-          }
-        })
+      whsikeyAPI.getWhiskeyByTastingId(this.tasting.id)
         .then((data) => {
           this.tastingWhiskeys = data;
-          console.log(data);
           this.loaded = true;
         });
     },
@@ -91,7 +85,7 @@ export default {
   border-style: solid;
   border-width: 2px 0;
   border-color: rgba(255, 235, 205, 0.288);
-  background-color: rgba(15, 1, 4, 0.178);
+  background-color: rgba(15, 1, 4, 0.5);
 }
 
 h3,

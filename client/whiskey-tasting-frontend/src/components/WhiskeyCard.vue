@@ -59,7 +59,7 @@ export default {
     border-style: solid;
     border-width: 2px 0;
     border-color: rgba(255, 235, 205, 0.288);
-    background-color: rgba(15, 1, 4, 0.178);
+    background-color: rgba(15, 5, 1, 0.493);
   }
 
   h4 {
