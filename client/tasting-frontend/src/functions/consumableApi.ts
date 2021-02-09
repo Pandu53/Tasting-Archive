@@ -3,6 +3,7 @@ import axios from "axios";
 
 export default {
     getAllConsumables() {
+
         return axios.get('/consumables')
             .then(response => {
                 return response.data
@@ -10,6 +11,7 @@ export default {
     },
 
     searchConsumableByName(searchPhrase: string) {
+
         return axios.get('/consumables/search/' + searchPhrase)
             .then(response => {
                 return response.data
