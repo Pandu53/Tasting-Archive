@@ -2,21 +2,21 @@
 import axios from "axios";
 
 export default {
-    getAllWhiskeys() {
+    getAllConsumables() {
         return axios.get('/whiskeys')
             .then(response => {
                 return response.data
             })
     },
 
-    searchWhiskeyByName(searchPhrase: string) {
+    searchConsumableByName(searchPhrase: string) {
         return axios.get('/whiskeys/search/' + searchPhrase)
             .then(response => {
                 return response.data
             })
     },
 
-    getWhiskeyByTastingId(tastingid: number|string){
+    getConsumableByTastingId(tastingid: number|string){
         return axios.get('/whiskeys/tasting/' + tastingid)
         .then(response => {
             return response.data

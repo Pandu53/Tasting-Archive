@@ -6,7 +6,7 @@
         <i class="mobile-menue-icon" @click="toggleMobileMenue()"></i>
         <router-link class="menue-link col-md-3" to="/" @click="toggleMobileMenue()">Home</router-link> 
         <router-link class="menue-link col-md-3" to="/tastingList" @click="toggleMobileMenue()">Alle Tastings</router-link> 
-        <router-link class="menue-link col-md-3" to="/whiskeylist" @click="toggleMobileMenue()">Alle Whiskeys</router-link>
+        <router-link class="menue-link col-md-3" to="/consumablelist" @click="toggleMobileMenue()">Alle Whiskeys</router-link>
       </div>
     </div>
     <div class="col-sm-3">
