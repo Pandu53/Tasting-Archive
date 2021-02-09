@@ -2,26 +2,26 @@ var db = require('./connection.ts');
 
 //WHISKEY SELECTS
 
-exports.allWhiskeys = function (callback: Function) : Array<object> {
+exports.allconsumables = function (callback: Function) : Array<object> {
     let query: string = 'SELECT * FROM whiskeys ORDER BY name';
     let result: Array<object> = db.query(query, callback);
     return result;
 }
 
-exports.whiskeyById = function (id: number, callback: Function) : Array<object> {
+exports.consumableById = function (id: number, callback: Function) : Array<object> {
     let query: string = 'SELECT * FROM whiskeys WHERE id=' + id;
     let result: Array<object> = db.query(query, callback);
     return result;
 }
 
-exports.whiskeySearchByName = function (searchPhrase: string, callback: Function) : Array<object> {
+exports.consumableSearchByName = function (searchPhrase: string, callback: Function) : Array<object> {
     let query: string = 'SELECT * FROM whiskeys WHERE name LIKE "%' + searchPhrase + '%"';
     console.log('searching for : ' + searchPhrase);
     let result: Array<object> = db.query(query, callback);
     return result;
 }
 
-exports.whiskeyByTastingId = function (tastingId: number, callback: Function) : Array<object> {
+exports.consumableByTastingId = function (tastingId: number, callback: Function) : Array<object> {
     let query: string = 'SELECT * FROM whiskeys WHERE TASTING_ID = ' + tastingId + ' ORDER BY total_rating desc';
     console.log('requesting whiskeys for tasting with id: ' + tastingId);
     let result: Array<object> = db.query(query, callback);

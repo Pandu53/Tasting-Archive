@@ -11,36 +11,36 @@
           </div>
         </div>
       </tr>
-      <tr v-if="tastingWhiskeys.length > 0">
+      <tr v-if="tastingConsumables.length > 0">
         <div class="row">
           <div class="col-lg-4">
             <div class="row">
               <div class="col-4">
                 <div class="fat">
-                  1ter Platz (Rating:{{ tastingWhiskeys[0].total_rating }}):
+                  1ter Platz (Rating:{{ tastingConsumables[0].total_rating }}):
                 </div>
               </div>
-              <div class="col-8">{{ tastingWhiskeys[0].name }}</div>
+              <div class="col-8">{{ tastingConsumables[0].name }}</div>
             </div>
           </div>
           <div class="col-lg-4">
             <div class="row">
               <div class="col-4">
                 <div class="fat">
-                  2ter Platz (Rating:{{ tastingWhiskeys[1].total_rating }}):
+                  2ter Platz (Rating:{{ tastingConsumables[1].total_rating }}):
                 </div>
               </div>
-              <div class="col-8">{{ tastingWhiskeys[1].name }}</div>
+              <div class="col-8">{{ tastingConsumables[1].name }}</div>
             </div>
           </div>
           <div class="col-lg-4">
             <div class="row">
               <div class="col-4">
                 <div class="fat">
-                  3ter Platz (Rating:{{ tastingWhiskeys[2].total_rating }}):
+                  3ter Platz (Rating:{{ tastingConsumables[2].total_rating }}):
                 </div>
               </div>
-              <div class="col-8">{{ tastingWhiskeys[2].name }}</div>
+              <div class="col-8">{{ tastingConsumables[2].name }}</div>
             </div>
           </div>
         </div>
@@ -51,26 +51,26 @@
 
 
 <script>
-import whsikeyAPI from "../functions/whiskeyApi.ts";
+import consumableAPI from "../functions/consumableApi.ts";
 
 export default {
   name: "tastingcard",
   props: ["tasting"],
   data: function () {
     return {
-      tastingWhiskeys: [],
+      tastingConsumables: [],
       loaded: false,
     };
   },
   created: function () {
-    this.getWhiskeysForTasting();
+    this.getConsumablesForTasting();
   },
   methods: {
-    getWhiskeysForTasting: function () {
+    getConsumablesForTasting: function () {
       this.loaded = false;
-      whsikeyAPI.getWhiskeyByTastingId(this.tasting.id)
+      whsikeyAPI.getConsumableByTastingId(this.tasting.id)
         .then((data) => {
-          this.tastingWhiskeys = data;
+          this.tastingConsumables = data;
           this.loaded = true;
         });
     },

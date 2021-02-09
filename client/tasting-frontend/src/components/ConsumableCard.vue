@@ -1,6 +1,6 @@
 <template>
-  <div class="whiskey-card col-xl-3 mr-1 ml-1 ">
-    <h3>{{whiskey.name}}</h3>
+  <div class="consumable-card col-xl-3 mr-1 ml-1 ">
+    <h3>{{consumable.name}}</h3>
     <table width="100%">
       <tr>
         <td>
@@ -8,15 +8,15 @@
           <table>
             <tr>
               <th>Total: </th>
-              <td>{{ whiskey.total_rating }}</td>
+              <td>{{ consumable.total_rating }}</td>
             </tr>
             <tr>
               <th>Geschmack: </th>
-              <td>{{ whiskey.taste_rating }}</td>
+              <td>{{ consumable.taste_rating }}</td>
             </tr>
             <tr>
               <th>Präsentation: </th>
-              <td>{{ whiskey.presentation_rating }}</td>
+              <td>{{ consumable.presentation_rating }}</td>
             </tr>
           </table>
         </td>
@@ -25,14 +25,14 @@
           <table>
             <tr>
               <th>Alter: </th>
-              <td>{{ whiskey.age}}</td>
+              <td>{{ consumable.age}}</td>
             </tr>
             <tr>
               <th>Vol%: </th>
-              <td>{{ whiskey.vol}} Vol.%</td>
+              <td>{{ consumable.vol}} Vol.%</td>
             </tr>
             <tr>
-              <th>Destille: </th>
+              <th>Hersteller: </th>
               <td></td>
             </tr>
           </table>
@@ -46,14 +46,14 @@
 
 <script>
 export default {
-  name: "whiskeycard",
-  props: ["whiskey"],
+  name: "consumablecard",
+  props: ["consumable"],
 };
 </script>
 
 <style scoped>
 
-  .whiskey-card {
+  .consumable-card {
     margin-top: 30px;
     padding: 0 20px;
     border-style: solid;

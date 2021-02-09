@@ -11,7 +11,7 @@ var loginRoutes = require('./components/login/loginRoutes.ts');
 
 app.use(express.json());
 app.use(cors());
-app.use('/whiskeys', consumableRoutes);
+app.use('/consumables', consumableRoutes);
 app.use('/tastings', tastingRoutes);
 app.use('/login', loginRoutes);
 

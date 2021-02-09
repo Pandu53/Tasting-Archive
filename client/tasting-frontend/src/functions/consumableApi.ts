@@ -2,22 +2,22 @@
 import axios from "axios";
 
 export default {
-    getAllWhiskeys() {
-        return axios.get('/whiskeys')
+    getAllConsumables() {
+        return axios.get('/consumables')
             .then(response => {
                 return response.data
             })
     },
 
-    searchWhiskeyByName(searchPhrase: string) {
-        return axios.get('/whiskeys/search/' + searchPhrase)
+    searchConsumableByName(searchPhrase: string) {
+        return axios.get('/consumables/search/' + searchPhrase)
             .then(response => {
                 return response.data
             })
     },
 
-    getWhiskeyByTastingId(tastingid: number|string){
-        return axios.get('/whiskeys/tasting/' + tastingid)
+    getConsumableByTastingId(tastingid: number|string){
+        return axios.get('/consumables/tasting/' + tastingid)
         .then(response => {
             return response.data
         })

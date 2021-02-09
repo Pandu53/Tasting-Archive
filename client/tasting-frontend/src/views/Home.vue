@@ -19,43 +19,43 @@
       </div>
     </div>
     <h2>Sieger des letzten Tastings</h2>
-    <div class="row justify-content-around" v-if="whiskeysLastTasting.length > 0" >
-      <whiskeycard
+    <div class="row justify-content-around" v-if="consumablesLastTasting.length > 0" >
+      <consumablecard
         v-for="i in 3"
-        :key="whiskeysLastTasting[i - 1].id"
-        :whiskey="whiskeysLastTasting[i - 1]"
+        :key="consumablesLastTasting[i - 1].id"
+        :consumable="consumablesLastTasting[i - 1]"
       />
     </div>
   </div>
 </template>
 
 <script>
-import whiskeycard from "../components/WhiskeyCard.vue";
+import consumablecard from "../components/ConsumableCard.vue";
 import tastingAPI from "../functions/tastingApi.ts";
-import whiskeyAPI from "../functions/whiskeyApi.ts";
+import consumableAPI from "../functions/consumableApi.ts";
 
 export default {
   name: "Home",
   components: {
-    whiskeycard,
+    consumablecard,
   },
   data: function () {
     return {
       loaded: false,
-      whiskeysLastTasting: [],
+      consumablesLastTasting: [],
       tasting: {},
     };
   },
   created: function () {
-    this.loadWhiskeyLastTasting();
+    this.loadConsumableLastTasting();
   },
   methods: {
-    loadWhiskeyLastTasting: function () {
+    loadConsumableLastTasting: function () {
       this.loaded = false;
       tastingAPI.getTastingByDate(this.dateToday(new Date()))
         .then((data) => {
           this.tasting = data[0];
-          this.getWhiskeysForTasting(this.tasting.id);
+          this.getConsumablesForTasting(this.tasting.id);
         });
     },
     dateToday: function (date) {
@@ -69,10 +69,10 @@ export default {
 
       return [year, month, day].join("-");
     },
-    getWhiskeysForTasting: function (tastingId) {
-      whiskeyAPI.getWhiskeyByTastingId(tastingId)
+    getConsumablesForTasting: function (tastingId) {
+      consumableAPI.getConsumableByTastingId(tastingId)
         .then((data) => {
-          this.whiskeysLastTasting = data;
+          this.consumablesLastTasting = data;
           this.loaded = true;
         });
     },

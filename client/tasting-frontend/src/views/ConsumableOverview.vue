@@ -10,18 +10,18 @@
           v-model="searchPhrase"
           id="form1"
           class="form-control col-4"
-          @keyup.enter="searchWhiskey()"
+          @keyup.enter="searchConsumable()"
         />
       </div>
 
-      <div class="list-count">{{ whiskeyList.length }} Whiskeys</div>
+      <div class="list-count">{{ consumableList.length }} Whiskeys</div>
     </div>
-    <div class="whiskey-list-container" v-if="whiskeyList.length > 0">
+    <div class="consumable-list-container" v-if="consumableList.length > 0">
       <div class="row justify-content-around">
-        <whiskeycard
-          v-for="whiskey in whiskeyList"
-          :key="whiskey.id"
-          :whiskey="whiskey"
+        <consumablecard
+          v-for="consumable in consumableList"
+          :key="consumable.id"
+          :consumable="consumable"
         />
       </div>
     </div>
@@ -29,36 +29,36 @@
 </template>
 
 <script>
-import whiskeycard from "../components/WhiskeyCard.vue";
-import whsikeyAPI from "../functions/whiskeyApi.ts";
+import consumablecard from "../components/consumableCard.vue";
+import whsikeyAPI from "../functions/consumableApi.ts";
 
 export default {
-  name: "whiskey_list",
+  name: "consumable_list",
   components: {
-    whiskeycard
+    consumablecard
   },
   data: function() {
     return {
       loaded: false,
-      whiskeyList: [],
+      consumableList: [],
       searchPhrase: ""
     };
   },
   created: function() {
-    this.loadWhiskeyList();
+    this.loadConsumableList();
   },
   methods: {
-    loadWhiskeyList: function() {
+    loadConsumableList: function() {
       this.loaded = false;
-      whsikeyAPI.getAllWhiskeys().then(data => {
-        this.whiskeyList = data;
+      whsikeyAPI.getAllConsumables().then(data => {
+        this.consumableList = data;
         this.loaded = true;
       });
     },
-    searchWhiskey: function() {
+    searchConsumables: function() {
       this.loaded = false;
-      whsikeyAPI.searchWhiskeyByName(this.searchPhrase).then(data => {
-        this.whiskeyList = data;
+      whsikeyAPI.searchConsumableByName(this.searchPhrase).then(data => {
+        this.consumableList = data;
         this.loaded = true;
       });
     }
@@ -78,7 +78,7 @@ input {
   background-color: rgba(14, 8, 2, 0.418);
 }
 
-.whiskey-list-container {
+.consumable-list-container {
   margin-top: 20px;
   height: 60vh;
   overflow-y: auto;

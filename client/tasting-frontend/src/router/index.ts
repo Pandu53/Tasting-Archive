@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Home from "../views/Home.vue";
-import WhiskeyList from "../views/WhiskeyOverview.vue";
+import ConsumableList from "../views/ConsumableOverview.vue";
 import TastingList from "../views/TastingOverview.vue";
 
 const routes: Array<RouteRecordRaw> = [
@@ -10,9 +10,9 @@ const routes: Array<RouteRecordRaw> = [
     component: Home
   },
   {
-    path: '/whiskeylist',
-    name: 'WhiskeyList',
-    component: WhiskeyList
+    path: '/consumablelist',
+    name: 'ConsumableList',
+    component: ConsumableList
   },
   {
     path: '/tastinglist',
