@@ -5,13 +5,13 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 //Import Routes
-var whiskeyRoutes = require('./components/whiskeys/whiskeysRoutes.ts');
+var consumableRoutes = require('./components/consumables/consumableRoutes.ts');
 var tastingRoutes = require('./components/tastings/tastingsRoutes.ts');
 var loginRoutes = require('./components/login/loginRoutes.ts');
 
 app.use(express.json());
 app.use(cors());
-app.use('/whiskeys', whiskeyRoutes);
+app.use('/whiskeys', consumableRoutes);
 app.use('/tastings', tastingRoutes);
 app.use('/login', loginRoutes);
 
