@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import consumablecard from "../components/consumableCard.vue";
+import consumablecard from "../components/ConsumableCard.vue";
 import whsikeyAPI from "../functions/consumableApi.ts";
 
 export default {
@@ -40,21 +40,16 @@ export default {
   data: function() {
     return {
       loaded: false,
-      consumableList: [],
       searchPhrase: ""
     };
   },
-  created: function() {
-    this.loadConsumableList();
+  computed:{
+    consumableList () {
+      console.log(this.$store.state.consumableList);
+      return this.$store.state.consumableList;
+    }
   },
   methods: {
-    loadConsumableList: function() {
-      this.loaded = false;
-      whsikeyAPI.getAllConsumables().then(data => {
-        this.consumableList = data;
-        this.loaded = true;
-      });
-    },
     searchConsumables: function() {
       this.loaded = false;
       whsikeyAPI.searchConsumableByName(this.searchPhrase).then(data => {

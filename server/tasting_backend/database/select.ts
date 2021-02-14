@@ -2,7 +2,7 @@ var db = require('./connection.ts');
 
 //WHISKEY SELECTS
 
-exports.allconsumables = function (callback: Function) : Array<object> {
+exports.allConsumables = function (callback: Function) : Array<object> {
     let query: string = 'SELECT * FROM whiskeys ORDER BY name';
     let result: Array<object> = db.query(query, callback);
     return result;
@@ -21,7 +21,7 @@ exports.consumableSearchByName = function (searchPhrase: string, callback: Funct
     return result;
 }
 
-exports.consumableByTastingId = function (tastingId: number, callback: Function) : Array<object> {
+exports.consumablesByTastingId = function (tastingId: number, callback: Function) : Array<object> {
     let query: string = 'SELECT * FROM whiskeys WHERE TASTING_ID = ' + tastingId + ' ORDER BY total_rating desc';
     console.log('requesting whiskeys for tasting with id: ' + tastingId);
     let result: Array<object> = db.query(query, callback);

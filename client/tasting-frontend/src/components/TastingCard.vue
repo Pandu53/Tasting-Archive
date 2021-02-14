@@ -68,7 +68,7 @@ export default {
   methods: {
     getConsumablesForTasting: function () {
       this.loaded = false;
-      whsikeyAPI.getConsumableByTastingId(this.tasting.id)
+      consumableAPI.getConsumableByTastingId(this.tasting.id)
         .then((data) => {
           this.tastingConsumables = data;
           this.loaded = true;

@@ -13,7 +13,9 @@ export default {
   components:{
     headerbar,
   },
-
+  created:function (){
+    this.$store.dispatch('initial');
+  }
 }
 </script>
 
