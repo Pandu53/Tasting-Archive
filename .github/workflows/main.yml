@@ -31,7 +31,6 @@ jobs:
 
  release:
     name: Publish release
-    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -39,8 +38,6 @@ jobs:
         with:
           node-version: '>=14'
       - run: |
-          npm ci
-          npm build --if-present
         env:
           CI: true
       - run: npx semantic-release
