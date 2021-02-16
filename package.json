@@ -1,0 +1,19 @@
+{
+  "name": "whiskey_tasting_overview",
+  "version": "0.0.0",
+  "description": "Just a little Project du have an overview for the tastings and ratings with my freinds",
+  "main": "null",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pandu53/Tasting-Archive.git"
+  },
+  "author": "Kevin Pandura",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pandu53/Tasting-Archive/issues"
+  },
+  "homepage": "https://github.com/Pandu53/Tasting-Archive#readme"
+}
