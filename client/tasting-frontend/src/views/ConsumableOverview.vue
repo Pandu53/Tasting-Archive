@@ -10,7 +10,7 @@
           v-model="searchPhrase"
           id="form1"
           class="form-control col-4"
-          @keyup.enter="searchConsumable()"
+          @keyup.enter="searchConsumables()"
         />
       </div>
 
@@ -45,7 +45,6 @@ export default {
   },
   computed:{
     consumableList () {
-      console.log(this.$store.state.consumableList);
       return this.$store.state.consumableList;
     }
   },
@@ -53,7 +52,7 @@ export default {
     searchConsumables: function() {
       this.loaded = false;
       whsikeyAPI.searchConsumableByName(this.searchPhrase).then(data => {
-        this.consumableList = data;
+        this.$store.state.consumableList = data;
         this.loaded = true;
       });
     }
