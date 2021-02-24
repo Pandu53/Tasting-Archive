@@ -23,8 +23,6 @@
   },
   "homepage": "https://github.com/Pandu53/Tasting-Archive#readme",
   "devDependencies": {
-    "release": "^6.3.0",
-    "semantic": "^0.0.1",
     "semantic-release": "^17.3.9"
   }
 }
